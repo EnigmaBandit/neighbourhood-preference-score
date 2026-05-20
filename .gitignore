@@ -1,0 +1,19 @@
+# secrets — never commit
+.streamlit/secrets.toml
+
+# auto-generated caches
+.cache/
+cache/
+
+# python env
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# editor / OS
+.claude/
+.DS_Store
+
+# original reference files — not for publishing
+original_code/
