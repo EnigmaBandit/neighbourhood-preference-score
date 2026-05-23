@@ -205,7 +205,7 @@ def render_map(scores_df: pd.DataFrame, selections: list[dict]) -> None:
                 pitch=0,
             ),
             map_style="mapbox://styles/mapbox/dark-v10",
-            mapbox_key=mapbox_token,
+            api_keys={"mapbox": mapbox_token} if mapbox_token else None,
             tooltip=_build_tooltip(selections),
         ),
         use_container_width=True,
