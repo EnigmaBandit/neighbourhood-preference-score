@@ -193,8 +193,6 @@ def render_map(scores_df: pd.DataFrame, selections: list[dict]) -> None:
         extruded=False,
     )
 
-    mapbox_token = st.secrets.get("mapbox_token", "")
-
     st.pydeck_chart(
         pdk.Deck(
             layers=[layer],
@@ -204,8 +202,8 @@ def render_map(scores_df: pd.DataFrame, selections: list[dict]) -> None:
                 zoom=10.5,
                 pitch=0,
             ),
-            map_style="mapbox://styles/mapbox/dark-v10",
-            api_keys={"mapbox": mapbox_token} if mapbox_token else None,
+            map_style="https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+            map_provider="carto",
             tooltip=_build_tooltip(selections),
         ),
         use_container_width=True,
